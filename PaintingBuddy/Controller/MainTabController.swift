@@ -25,6 +25,8 @@ class MainTabController: UITabBarController {
     
     //MARK: - Helpers
     
+    
+    
     func configureViewControllers() {
         let painting = PaintingController()
         painting.tabBarItem.image = UIImage(systemName: "photo")
