@@ -15,6 +15,7 @@
 		E37A70042604E84E006880A5 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A70032604E84E006880A5 /* MainTabController.swift */; };
 		E37A70082604ED11006880A5 /* PaintingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A70072604ED11006880A5 /* PaintingController.swift */; };
 		E37A700B2604ED29006880A5 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A700A2604ED29006880A5 /* SearchController.swift */; };
+		E39442412608DA8A0062AAA4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39442402608DA8A0062AAA4 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E37A70032604E84E006880A5 /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		E37A70072604ED11006880A5 /* PaintingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingController.swift; sourceTree = "<group>"; };
 		E37A700A2604ED29006880A5 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		E39442402608DA8A0062AAA4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		E37A70022604E729006880A5 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E39442402608DA8A0062AAA4 /* Extensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E37A6FE72604DA4F006880A5 /* AppDelegate.swift in Sources */,
+				E39442412608DA8A0062AAA4 /* Extensions.swift in Sources */,
 				E37A700B2604ED29006880A5 /* SearchController.swift in Sources */,
 				E37A70082604ED11006880A5 /* PaintingController.swift in Sources */,
 				E37A6FE92604DA4F006880A5 /* SceneDelegate.swift in Sources */,

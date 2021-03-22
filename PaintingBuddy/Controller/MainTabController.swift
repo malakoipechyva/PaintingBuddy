@@ -27,7 +27,9 @@ class MainTabController: UITabBarController {
     
     func configureViewControllers() {
         let painting = PaintingController()
+        painting.tabBarItem.image = UIImage(systemName: "photo")
         let search = SearchController()
+        search.tabBarItem.image = UIImage(systemName: "magnifyingglass")
         
         viewControllers = [painting, search]
     }
