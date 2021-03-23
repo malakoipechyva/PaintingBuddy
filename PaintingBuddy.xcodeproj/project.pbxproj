@@ -16,6 +16,7 @@
 		E37A70082604ED11006880A5 /* PaintingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A70072604ED11006880A5 /* PaintingController.swift */; };
 		E37A700B2604ED29006880A5 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A700A2604ED29006880A5 /* SearchController.swift */; };
 		E39442412608DA8A0062AAA4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39442402608DA8A0062AAA4 /* Extensions.swift */; };
+		E39442442608E93E0062AAA4 /* PaintingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39442432608E93E0062AAA4 /* PaintingService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E37A70072604ED11006880A5 /* PaintingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingController.swift; sourceTree = "<group>"; };
 		E37A700A2604ED29006880A5 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		E39442402608DA8A0062AAA4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E39442432608E93E0062AAA4 /* PaintingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		E37A6FFC2604E6D1006880A5 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				E39442432608E93E0062AAA4 /* PaintingService.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			files = (
 				E37A6FE72604DA4F006880A5 /* AppDelegate.swift in Sources */,
 				E39442412608DA8A0062AAA4 /* Extensions.swift in Sources */,
+				E39442442608E93E0062AAA4 /* PaintingService.swift in Sources */,
 				E37A700B2604ED29006880A5 /* SearchController.swift in Sources */,
 				E37A70082604ED11006880A5 /* PaintingController.swift in Sources */,
 				E37A6FE92604DA4F006880A5 /* SceneDelegate.swift in Sources */,

@@ -30,6 +30,7 @@ class PaintingController: UIViewController {
         
         view.backgroundColor = .systemPurple
         configureUI()
+        fetchPainting()
     }
     
     //MARK: - Selectors
@@ -39,6 +40,10 @@ class PaintingController: UIViewController {
     }
     
     //MARK: - API
+    
+    func fetchPainting() {
+        PaintingService.shared.fetchPainting()
+    }
     
     //MARK: - Helpers
     func configureUI() {
