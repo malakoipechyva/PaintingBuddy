@@ -17,6 +17,8 @@
 		E37A700B2604ED29006880A5 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A700A2604ED29006880A5 /* SearchController.swift */; };
 		E39442412608DA8A0062AAA4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39442402608DA8A0062AAA4 /* Extensions.swift */; };
 		E39442442608E93E0062AAA4 /* PaintingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39442432608E93E0062AAA4 /* PaintingService.swift */; };
+		E3E67237261F048A00C054DA /* PaintingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E67236261F048A00C054DA /* PaintingViewModel.swift */; };
+		E3E6723A261F058000C054DA /* Painting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E67239261F058000C054DA /* Painting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		E37A700A2604ED29006880A5 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		E39442402608DA8A0062AAA4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E39442432608E93E0062AAA4 /* PaintingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingService.swift; sourceTree = "<group>"; };
+		E3E67236261F048A00C054DA /* PaintingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingViewModel.swift; sourceTree = "<group>"; };
+		E3E67239261F058000C054DA /* Painting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Painting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +69,9 @@
 			isa = PBXGroup;
 			children = (
 				E37A70012604E6EB006880A5 /* Model */,
+				E37A6FFE2604E6DB006880A5 /* View */,
 				E37A70002604E6DD006880A5 /* ViewModel */,
 				E37A6FFF2604E6DC006880A5 /* Controller */,
-				E37A6FFE2604E6DB006880A5 /* View */,
 				E37A6FFC2604E6D1006880A5 /* Api */,
 				E37A70022604E729006880A5 /* Utils */,
 				E37A6FE62604DA4F006880A5 /* AppDelegate.swift */,
@@ -108,6 +112,7 @@
 		E37A70002604E6DD006880A5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E3E67236261F048A00C054DA /* PaintingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 		E37A70012604E6EB006880A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E3E67239261F058000C054DA /* Painting.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,11 +203,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3E67237261F048A00C054DA /* PaintingViewModel.swift in Sources */,
 				E37A6FE72604DA4F006880A5 /* AppDelegate.swift in Sources */,
 				E39442412608DA8A0062AAA4 /* Extensions.swift in Sources */,
 				E39442442608E93E0062AAA4 /* PaintingService.swift in Sources */,
 				E37A700B2604ED29006880A5 /* SearchController.swift in Sources */,
 				E37A70082604ED11006880A5 /* PaintingController.swift in Sources */,
+				E3E6723A261F058000C054DA /* Painting.swift in Sources */,
 				E37A6FE92604DA4F006880A5 /* SceneDelegate.swift in Sources */,
 				E37A70042604E84E006880A5 /* MainTabController.swift in Sources */,
 			);

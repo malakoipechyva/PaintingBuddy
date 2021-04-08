@@ -11,7 +11,7 @@ struct PaintingService {
     
     static let shared = PaintingService()
     
-    func fetchPainting() {
+    func fetchPaintings() {
         print("DEBUG: Fetch painting...")
     }
     
