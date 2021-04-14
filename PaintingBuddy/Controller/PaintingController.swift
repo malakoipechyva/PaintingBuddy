@@ -10,6 +10,8 @@ import UIKit
 class PaintingController: UIViewController {
     //MARK: - Properties
     
+    private let viewModel = PaintingViewModel()
+    
     private let imageView: UIImageView = {
         let iview = UIImageView()
         iview.backgroundColor = .systemTeal
@@ -24,7 +26,7 @@ class PaintingController: UIViewController {
         return button
     }()
     //MARK: - Lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,7 +44,7 @@ class PaintingController: UIViewController {
     //MARK: - API
     
     func fetchPainting() {
-        PaintingService.shared.fetchPainting()
+        
     }
     
     //MARK: - Helpers

@@ -19,6 +19,7 @@
 		E39442442608E93E0062AAA4 /* PaintingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39442432608E93E0062AAA4 /* PaintingService.swift */; };
 		E3E67237261F048A00C054DA /* PaintingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E67236261F048A00C054DA /* PaintingViewModel.swift */; };
 		E3E6723A261F058000C054DA /* Painting.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E67239261F058000C054DA /* Painting.swift */; };
+		E3FCC56B262753F500A6B45A /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FCC56A262753F500A6B45A /* Box.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		E39442432608E93E0062AAA4 /* PaintingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingService.swift; sourceTree = "<group>"; };
 		E3E67236261F048A00C054DA /* PaintingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintingViewModel.swift; sourceTree = "<group>"; };
 		E3E67239261F058000C054DA /* Painting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Painting.swift; sourceTree = "<group>"; };
+		E3FCC56A262753F500A6B45A /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				E39442402608DA8A0062AAA4 /* Extensions.swift */,
+				E3FCC56A262753F500A6B45A /* Box.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				E3E6723A261F058000C054DA /* Painting.swift in Sources */,
 				E37A6FE92604DA4F006880A5 /* SceneDelegate.swift in Sources */,
 				E37A70042604E84E006880A5 /* MainTabController.swift in Sources */,
+				E3FCC56B262753F500A6B45A /* Box.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

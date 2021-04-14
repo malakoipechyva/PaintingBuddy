@@ -9,6 +9,8 @@ import Foundation
 
 struct PaintingViewModel {
     
+    private var paintings = [Painting]()
+    
     //MARK: - Properties
     
     //MARK: - Lifecycle
@@ -17,7 +19,8 @@ struct PaintingViewModel {
     
     //MARK: - API
     
-    func fetchPaintings() {
+    func fetchPaintings(completion: @escaping([Painting]) -> Void) {
+        
         PaintingService.shared.fetchPaintings()
     }
     
