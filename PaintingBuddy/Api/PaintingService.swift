@@ -20,7 +20,7 @@ struct PaintingService {
     
     func fetchPaintings() {
         guard let url = url else { return }
-        // [weak self]
+        // [weak self] ?
         let task = session.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }
             let result = parseJSON(data: data)
@@ -35,8 +35,8 @@ struct PaintingService {
         dateFormatter.dateFormat = "yyyy-MMMM"
         decoder.dateDecodingStrategy = .formatted(dateFormatter)
         do {
-            let decodedData = try decoder.decode(Gallery.self, from: data)
-            return .success(decodedData.paintings)
+            let decodedData = try decoder.decode([Painting].self, from: data)
+            return .success(decodedData)
         } catch {
             return .failure(error)
         }

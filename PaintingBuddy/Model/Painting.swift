@@ -7,14 +7,6 @@
 
 import Foundation
 
-struct Gallery: Codable {
-    let paintings: [Painting]
-    
-    enum CodingKeys: String, CodingKey {
-      case paintings
-    }
-}
-
 struct Painting: Codable {
     
     let title: String
