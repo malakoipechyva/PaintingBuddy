@@ -9,10 +9,10 @@ import Foundation
 
 struct PaintingViewModel {
     
-    private var paintings = [Painting]()
-    
     //MARK: - Properties
     
+    private var paintings = [Painting]()
+
     //MARK: - Lifecycle
     
     //MARK: - Selectors
@@ -20,7 +20,6 @@ struct PaintingViewModel {
     //MARK: - API
     
     func fetchPaintings() {
-        
         PaintingService.shared.fetchPaintings()
     }
     
