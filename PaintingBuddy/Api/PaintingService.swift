@@ -18,13 +18,19 @@ struct PaintingService {
         return URLSession(configuration: config)
     }()
     
-    func fetchPaintings() {
+    func fetchPaintings(completion: @escaping ([Painting]) -> Void) {
         guard let url = url else { return }
         // [weak self] ?
         let task = session.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }
             let result = parseJSON(data: data)
-            print(result)
+            switch result {
+            case let .success(paintings):
+                completion(paintings)
+            case let .failure(error):
+                print(error)
+            }
+
         }
         task.resume()
     }

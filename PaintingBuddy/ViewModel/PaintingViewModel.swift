@@ -20,7 +20,9 @@ struct PaintingViewModel {
     //MARK: - API
     
     func fetchPaintings() {
-        PaintingService.shared.fetchPaintings()
+        PaintingService.shared.fetchPaintings { gallery in
+            print(gallery[0])
+        }
     }
     
     //MARK: - Helpers
