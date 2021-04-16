@@ -44,7 +44,7 @@ class PaintingController: UIViewController {
     //MARK: - API
     
     func fetchPainting() {
-        
+        viewModel.fetchPaintings()
     }
     
     //MARK: - Helpers

@@ -19,7 +19,7 @@ struct PaintingViewModel {
     
     //MARK: - API
     
-    func fetchPaintings(completion: @escaping([Painting]) -> Void) {
+    func fetchPaintings() {
         
         PaintingService.shared.fetchPaintings()
     }
