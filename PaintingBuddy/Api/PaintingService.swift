@@ -17,15 +17,17 @@ struct PaintingService {
         guard let url = url else { return }
         // [weak self] ?
         URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else { return }
-            let result = parseJSON(data: data)
-            switch result {
-            case let .success(paintings):
-                completion(paintings)
-            case let .failure(error):
-                print(error.localizedDescription)
+            DispatchQueue.main.async {
+                guard let data = data else { return }
+                let result = parseJSON(data: data)
+                switch result {
+                case let .success(paintings):
+                    completion(paintings)
+                case let .failure(error):
+                    print(error.localizedDescription)
+                }
             }
-        }
+            }
         .resume()
     }
     

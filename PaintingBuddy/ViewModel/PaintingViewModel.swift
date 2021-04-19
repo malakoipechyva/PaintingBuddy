@@ -5,13 +5,20 @@
 //  Created by malakoipechyva on 8.04.21.
 //
 
-import Foundation
+import UIKit.UIImage
 
-struct PaintingViewModel {
+class PaintingViewModel {
     
     //MARK: - Properties
     
-    private var paintings = [Painting]()
+    private var paintings = [Painting]() {
+        didSet {
+            paintingTitle.value = paintings[0].title
+        }
+    }
+    
+    let paintingImage: Box<UIImage?> = Box(nil)
+    let paintingTitle = Box("loading...")
 
     //MARK: - Lifecycle
     
@@ -21,7 +28,7 @@ struct PaintingViewModel {
     
     func fetchPaintings() {
         PaintingService.shared.fetchPaintings { gallery in
-            print(gallery[0])
+            self.paintings = gallery
         }
     }
     

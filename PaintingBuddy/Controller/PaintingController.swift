@@ -25,6 +25,12 @@ class PaintingController: UIViewController {
         button.addTarget(self, action: #selector(handleActionButtonTap), for: .touchUpInside)
         return button
     }()
+    
+    private let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 14)
+        return label
+    }()
     //MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -33,6 +39,10 @@ class PaintingController: UIViewController {
         view.backgroundColor = .systemPurple
         configureUI()
         fetchPainting()
+        
+        viewModel.paintingTitle.bind { [weak self] title in
+            self?.titleLabel.text = title
+        }
     }
     
     //MARK: - Selectors
@@ -52,6 +62,10 @@ class PaintingController: UIViewController {
         view.addSubview(imageView)
         imageView.anchor(top: view.topAnchor, left: view.leftAnchor,bottom: view.bottomAnchor, right: view.rightAnchor,
                          paddingBottom: 80)
+        
+        view.addSubview(titleLabel)
+        titleLabel.centerX(inView: imageView)
+        titleLabel.anchor(bottom: imageView.bottomAnchor, paddingBottom: 100)
         
         view.addSubview(actionButton)
         actionButton.centerX(inView: imageView)
