@@ -5,7 +5,7 @@
 //  Created by malakoipechyva on 8.04.21.
 //
 
-import UIKit.UIImage
+import Foundation
 
 class PaintingViewModel {
     
@@ -14,10 +14,11 @@ class PaintingViewModel {
     private var paintings = [Painting]() {
         didSet {
             paintingTitle.value = paintings[0].title
+            imageURLStr.value = paintings[0].imageUrl
         }
     }
     
-    let paintingImage: Box<UIImage?> = Box(nil)
+    let imageURLStr = Box(" ")
     let paintingTitle = Box("loading...")
 
     //MARK: - Lifecycle

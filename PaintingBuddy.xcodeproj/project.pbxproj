@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B51A1EFDACC3486C33395492 /* Pods_PaintingBuddy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 864252E3B3251C12A900455C /* Pods_PaintingBuddy.framework */; };
 		E37A6FE72604DA4F006880A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A6FE62604DA4F006880A5 /* AppDelegate.swift */; };
 		E37A6FE92604DA4F006880A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37A6FE82604DA4F006880A5 /* SceneDelegate.swift */; };
 		E37A6FEE2604DA4F006880A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E37A6FEC2604DA4F006880A5 /* Main.storyboard */; };
@@ -23,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		377158FBA4DBD299902CFF7D /* Pods-PaintingBuddy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaintingBuddy.release.xcconfig"; path = "Target Support Files/Pods-PaintingBuddy/Pods-PaintingBuddy.release.xcconfig"; sourceTree = "<group>"; };
+		864252E3B3251C12A900455C /* Pods_PaintingBuddy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PaintingBuddy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C053BF5977B894C0CA4565F2 /* Pods-PaintingBuddy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaintingBuddy.debug.xcconfig"; path = "Target Support Files/Pods-PaintingBuddy/Pods-PaintingBuddy.debug.xcconfig"; sourceTree = "<group>"; };
 		E37A6FE32604DA4F006880A5 /* PaintingBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaintingBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E37A6FE62604DA4F006880A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E37A6FE82604DA4F006880A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,17 +49,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B51A1EFDACC3486C33395492 /* Pods_PaintingBuddy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D8D88A8303E7F7F8A628343 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				864252E3B3251C12A900455C /* Pods_PaintingBuddy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A300C37FA0112C35DE0652D5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C053BF5977B894C0CA4565F2 /* Pods-PaintingBuddy.debug.xcconfig */,
+				377158FBA4DBD299902CFF7D /* Pods-PaintingBuddy.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E37A6FDA2604DA4F006880A5 = {
 			isa = PBXGroup;
 			children = (
 				E37A6FE52604DA4F006880A5 /* PaintingBuddy */,
 				E37A6FE42604DA4F006880A5 /* Products */,
+				A300C37FA0112C35DE0652D5 /* Pods */,
+				8D8D88A8303E7F7F8A628343 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,9 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E37A6FF72604DA50006880A5 /* Build configuration list for PBXNativeTarget "PaintingBuddy" */;
 			buildPhases = (
+				4DC395EDA49FF3893412436B /* [CP] Check Pods Manifest.lock */,
 				E37A6FDF2604DA4F006880A5 /* Sources */,
 				E37A6FE02604DA4F006880A5 /* Frameworks */,
 				E37A6FE12604DA4F006880A5 /* Resources */,
+				9B8DB21817712FB09E99E596 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -200,6 +227,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4DC395EDA49FF3893412436B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PaintingBuddy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B8DB21817712FB09E99E596 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PaintingBuddy/Pods-PaintingBuddy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PaintingBuddy/Pods-PaintingBuddy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PaintingBuddy/Pods-PaintingBuddy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E37A6FDF2604DA4F006880A5 /* Sources */ = {
@@ -359,6 +428,7 @@
 		};
 		E37A6FF82604DA50006880A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C053BF5977B894C0CA4565F2 /* Pods-PaintingBuddy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -378,6 +448,7 @@
 		};
 		E37A6FF92604DA50006880A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 377158FBA4DBD299902CFF7D /* Pods-PaintingBuddy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

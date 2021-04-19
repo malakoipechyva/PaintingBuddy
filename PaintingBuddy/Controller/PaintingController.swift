@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PaintingController: UIViewController {
     //MARK: - Properties
@@ -42,6 +43,11 @@ class PaintingController: UIViewController {
         
         viewModel.paintingTitle.bind { [weak self] title in
             self?.titleLabel.text = title
+        }
+        
+        viewModel.imageURLStr.bind { [weak self] urlStr in
+            guard let url = URL(string: urlStr) else { return }
+            self?.imageView.sd_setImage(with: url, completed: nil)
         }
     }
     
