@@ -54,7 +54,7 @@ class PaintingController: UIViewController {
     //MARK: - Selectors
     
     @objc func handleActionButtonTap() {
-        print("DEBUG: handle next painting tap...")
+        viewModel.fetchPaintings()
     }
     
     //MARK: - API

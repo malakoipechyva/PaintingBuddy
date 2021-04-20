@@ -16,14 +16,11 @@ class PaintingViewModel {
 
     private var paintings = [Painting]() {
         didSet {
-            paintingTitle.value = paintings[0].title
-            imageURLStr.value = paintings[1].imageUrl
+            takeRandomPainting(gallery: paintings)
         }
     }
     
     //MARK: - Lifecycle
-    
-    //MARK: - Selectors
     
     //MARK: - API
     
@@ -35,4 +32,13 @@ class PaintingViewModel {
     
     //MARK: - Helpers
     
+    func takeRandomPainting(gallery: [Painting]) {
+        if let painting = gallery.randomElement() {
+            paintingTitle.value = painting.title
+            imageURLStr.value = painting.imageUrl
+        } else {
+            paintingTitle.value = gallery[0].title
+            imageURLStr.value = gallery[0].imageUrl
+        }
+    }
 }
