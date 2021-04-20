@@ -15,8 +15,7 @@ class PaintingController: UIViewController {
     
     private let imageView: UIImageView = {
         let iview = UIImageView()
-        iview.backgroundColor = .systemTeal
-        iview.contentMode = .scaleAspectFit
+        iview.contentMode = .scaleAspectFill
         return iview
     }()
     
@@ -30,6 +29,7 @@ class PaintingController: UIViewController {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.textColor = .white
         return label
     }()
     //MARK: - Lifecycle
@@ -66,8 +66,7 @@ class PaintingController: UIViewController {
     //MARK: - Helpers
     func configureUI() {
         view.addSubview(imageView)
-        imageView.anchor(top: view.topAnchor, left: view.leftAnchor,bottom: view.bottomAnchor, right: view.rightAnchor,
-                         paddingBottom: 80)
+        imageView.anchor(top: view.topAnchor, left: view.leftAnchor,bottom: view.bottomAnchor, right: view.rightAnchor)
         
         view.addSubview(titleLabel)
         titleLabel.centerX(inView: imageView)

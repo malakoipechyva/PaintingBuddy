@@ -11,16 +11,16 @@ class PaintingViewModel {
     
     //MARK: - Properties
     
-    private var paintings = [Painting]() {
-        didSet {
-            paintingTitle.value = paintings[0].title
-            imageURLStr.value = paintings[0].imageUrl
-        }
-    }
-    
     let imageURLStr = Box(" ")
     let paintingTitle = Box("loading...")
 
+    private var paintings = [Painting]() {
+        didSet {
+            paintingTitle.value = paintings[0].title
+            imageURLStr.value = paintings[1].imageUrl
+        }
+    }
+    
     //MARK: - Lifecycle
     
     //MARK: - Selectors

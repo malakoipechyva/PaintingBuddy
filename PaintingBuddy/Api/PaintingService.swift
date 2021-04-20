@@ -13,9 +13,10 @@ struct PaintingService {
     
     private let url = URL(string: "https://www.wikiart.org/en/App/Painting/MostViewedPaintings")
     
+    private init() {    }
+    
     func fetchPaintings(completion: @escaping ([Painting]) -> Void) {
         guard let url = url else { return }
-        // [weak self] ?
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data else { return }
@@ -27,9 +28,10 @@ struct PaintingService {
                     print(error.localizedDescription)
                 }
             }
-            }
+        }
         .resume()
     }
+    
     
     func parseJSON(data: Data) -> Result<[Painting], Error> {
         let decoder = JSONDecoder()
