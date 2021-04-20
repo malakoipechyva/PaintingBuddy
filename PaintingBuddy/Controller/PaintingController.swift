@@ -39,6 +39,13 @@ class PaintingController: UIViewController {
         label.textColor = .white
         return label
     }()
+    
+    private let dateLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .white
+        return label
+    }()
     //MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -52,6 +59,9 @@ class PaintingController: UIViewController {
         }
         viewModel.artistTitle.bind { [weak self] title in
             self?.artistLabel.text = title
+        }
+        viewModel.dateOfPainting.bind { [weak self] date in
+            self?.dateLabel.text = "\(date)"
         }
         
         viewModel.imageURLStr.bind { [weak self] urlStr in
@@ -77,14 +87,17 @@ class PaintingController: UIViewController {
         view.addSubview(imageView)
         imageView.anchor(top: view.topAnchor, left: view.leftAnchor,bottom: view.bottomAnchor, right: view.rightAnchor)
         
-        let stack = UIStackView(arrangedSubviews: [titleLabel, artistLabel])
-        stack.axis = .vertical
-        stack.spacing = 10
-        stack.alignment = .center
-        stack.backgroundColor = .black
-        view.addSubview(stack)
-        stack.centerX(inView: imageView)
-        stack.anchor(bottom: imageView.bottomAnchor, paddingBottom: 100)
+        let bottomStack = UIStackView(arrangedSubviews: [artistLabel, dateLabel])
+        bottomStack.spacing = 3
+        
+        let infoStack = UIStackView(arrangedSubviews: [titleLabel, bottomStack])
+        infoStack.axis = .vertical
+        infoStack.spacing = 10
+        infoStack.alignment = .center
+        infoStack.backgroundColor = .black
+        view.addSubview(infoStack)
+        infoStack.centerX(inView: imageView)
+        infoStack.anchor(bottom: imageView.bottomAnchor, paddingBottom: 100)
         
         view.addSubview(actionButton)
         actionButton.centerX(inView: imageView)

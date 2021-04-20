@@ -14,6 +14,7 @@ class PaintingViewModel {
     let imageURLStr = Box(" ")
     let paintingTitle = Box("loading...")
     let artistTitle = Box(" ")
+    let dateOfPainting = Box(0)
 
     private var paintings = [Painting]() {
         didSet {
@@ -26,6 +27,7 @@ class PaintingViewModel {
             paintingTitle.value = paintingForShow.title
             artistTitle.value = paintingForShow.artistName
             imageURLStr.value = paintingForShow.imageUrl
+            dateOfPainting.value = paintingForShow.dateOfPainting ?? 0
         }
     }
     
