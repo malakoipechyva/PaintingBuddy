@@ -32,17 +32,26 @@ class PaintingController: UIViewController {
         label.textColor = .white
         return label
     }()
+    
+    private let artistLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.textColor = .white
+        return label
+    }()
     //MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .systemPurple
+
         configureUI()
         fetchPainting()
         
         viewModel.paintingTitle.bind { [weak self] title in
             self?.titleLabel.text = title
+        }
+        viewModel.artistTitle.bind { [weak self] title in
+            self?.artistLabel.text = title
         }
         
         viewModel.imageURLStr.bind { [weak self] urlStr in
@@ -68,9 +77,14 @@ class PaintingController: UIViewController {
         view.addSubview(imageView)
         imageView.anchor(top: view.topAnchor, left: view.leftAnchor,bottom: view.bottomAnchor, right: view.rightAnchor)
         
-        view.addSubview(titleLabel)
-        titleLabel.centerX(inView: imageView)
-        titleLabel.anchor(bottom: imageView.bottomAnchor, paddingBottom: 100)
+        let stack = UIStackView(arrangedSubviews: [titleLabel, artistLabel])
+        stack.axis = .vertical
+        stack.spacing = 10
+        stack.alignment = .center
+        stack.backgroundColor = .black
+        view.addSubview(stack)
+        stack.centerX(inView: imageView)
+        stack.anchor(bottom: imageView.bottomAnchor, paddingBottom: 100)
         
         view.addSubview(actionButton)
         actionButton.centerX(inView: imageView)
