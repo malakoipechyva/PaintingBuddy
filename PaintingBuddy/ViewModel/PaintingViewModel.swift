@@ -16,7 +16,14 @@ class PaintingViewModel {
 
     private var paintings = [Painting]() {
         didSet {
-            takeRandomPainting(gallery: paintings)
+            takeRandomPaintingForShow()
+        }
+    }
+    
+    private var paintingForShow = Painting(title: "", artistName: "", dateOfPainting: 0, imageUrl: "") {
+        didSet {
+            paintingTitle.value = paintingForShow.title
+            imageURLStr.value = paintingForShow.imageUrl
         }
     }
     
@@ -32,13 +39,10 @@ class PaintingViewModel {
     
     //MARK: - Helpers
     
-    func takeRandomPainting(gallery: [Painting]) {
-        if let painting = gallery.randomElement() {
-            paintingTitle.value = painting.title
-            imageURLStr.value = painting.imageUrl
-        } else {
-            paintingTitle.value = gallery[0].title
-            imageURLStr.value = gallery[0].imageUrl
+    
+    func takeRandomPaintingForShow() {
+        if let painting = paintings.randomElement() {
+            paintingForShow = painting
         }
     }
 }

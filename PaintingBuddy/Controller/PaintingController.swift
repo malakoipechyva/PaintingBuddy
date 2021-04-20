@@ -54,7 +54,7 @@ class PaintingController: UIViewController {
     //MARK: - Selectors
     
     @objc func handleActionButtonTap() {
-        viewModel.fetchPaintings()
+        viewModel.takeRandomPaintingForShow()
     }
     
     //MARK: - API
