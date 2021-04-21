@@ -31,8 +31,6 @@ class PaintingViewModel {
         }
     }
     
-    //MARK: - Lifecycle
-    
     //MARK: - API
     
     func fetchPaintings() {
@@ -42,7 +40,6 @@ class PaintingViewModel {
     }
     
     //MARK: - Helpers
-    
     
     func takeRandomPaintingForShow() {
         if let painting = paintings.randomElement() {

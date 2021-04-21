@@ -19,6 +19,11 @@ class PaintingController: UIViewController {
         return iview
     }()
     
+    private let scrollView: PaintingView = {
+       let pView = PaintingView()
+        return pView
+    }()
+    
     private let actionButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .red
