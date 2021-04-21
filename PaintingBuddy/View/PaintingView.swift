@@ -16,8 +16,11 @@ class PaintingView: UIScrollView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .blue
+
         addSubview(imageView)
-        contentSize = imageView.image?.size ?? CGSize(width: frame.size.width, height: frame.size.height)
+        imageView.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor)
+
     }
     
     required init?(coder: NSCoder) {

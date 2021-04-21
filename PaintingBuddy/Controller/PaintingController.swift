@@ -19,7 +19,7 @@ class PaintingController: UIViewController {
         return iview
     }()
     
-    private let scrollView: PaintingView = {
+    private let paintingView: PaintingView = {
        let pView = PaintingView()
         return pView
     }()
@@ -71,7 +71,7 @@ class PaintingController: UIViewController {
         
         viewModel.imageURLStr.bind { [weak self] urlStr in
             guard let url = URL(string: urlStr) else { return }
-            self?.imageView.sd_setImage(with: url, completed: nil)
+            self?.paintingView.imageView.sd_setImage(with: url, completed: nil)
         }
     }
     
@@ -89,8 +89,8 @@ class PaintingController: UIViewController {
     
     //MARK: - Helpers
     func configureUI() {
-        view.addSubview(imageView)
-        imageView.anchor(top: view.topAnchor, left: view.leftAnchor,bottom: view.bottomAnchor, right: view.rightAnchor)
+        view.addSubview(paintingView)
+        paintingView.anchor(top: view.topAnchor, left: view.leftAnchor,bottom: view.bottomAnchor, right: view.rightAnchor)
         
         let bottomStack = UIStackView(arrangedSubviews: [artistLabel, dateLabel])
         bottomStack.spacing = 3
@@ -100,12 +100,13 @@ class PaintingController: UIViewController {
         infoStack.spacing = 10
         infoStack.alignment = .center
         infoStack.backgroundColor = .black
+        
         view.addSubview(infoStack)
-        infoStack.centerX(inView: imageView)
-        infoStack.anchor(bottom: imageView.bottomAnchor, paddingBottom: 100)
+        infoStack.centerX(inView: view)
+        infoStack.anchor(bottom: view.bottomAnchor, paddingBottom: 100)
         
         view.addSubview(actionButton)
-        actionButton.centerX(inView: imageView)
-        actionButton.anchor(bottom: imageView.bottomAnchor, paddingBottom: 20)
+        actionButton.centerX(inView: view)
+        actionButton.anchor(bottom: view.bottomAnchor, paddingBottom: 20)
     }
 }
