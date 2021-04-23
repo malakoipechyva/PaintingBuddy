@@ -15,10 +15,16 @@ class PaintingView: UIScrollView {
         return iview
     }()
     
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.delegate = self
+        
         backgroundColor = .black
         bounces = false
+        minimumZoomScale = 0.5
+        maximumZoomScale = 3.0
 
         addSubview(imageView)
         imageView.centerY(inView: self)
@@ -28,10 +34,12 @@ class PaintingView: UIScrollView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
 }
 
 extension PaintingView: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageView
+        return self.imageView
     }
 }
