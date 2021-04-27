@@ -8,5 +8,6 @@ target 'PaintingBuddy' do
   # Pods for PaintingBuddy
 
   pod 'SDWebImage', '~> 5.0'
+  pod 'RealmSwift'
 
 end
