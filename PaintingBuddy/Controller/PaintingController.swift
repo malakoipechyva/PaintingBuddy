@@ -13,12 +13,6 @@ class PaintingController: UIViewController {
     
     private let viewModel = PaintingViewModel()
     
-    private let imageView: UIImageView = {
-        let iview = UIImageView()
-        iview.contentMode = .scaleAspectFill
-        return iview
-    }()
-    
     private let paintingView: PaintingView = {
        let pView = PaintingView()
         return pView

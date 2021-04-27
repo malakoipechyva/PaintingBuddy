@@ -5,11 +5,14 @@
 //  Created by malakoipechyva on 8.04.21.
 //
 
-import Foundation
+import UIKit
+import CoreData
 
 class PaintingViewModel {
     
     //MARK: - Properties
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     let imageURLStr = Box(" ")
     let paintingTitle = Box("loading...")
@@ -34,6 +37,8 @@ class PaintingViewModel {
     //MARK: - API
     
     func fetchPaintings() {
+        let corePaintings: [NSManagedObject] = []
+
         PaintingService.shared.fetchPaintings { gallery in
             self.paintings = gallery
         }
@@ -44,6 +49,14 @@ class PaintingViewModel {
     func takeRandomPaintingForShow() {
         if let painting = paintings.randomElement() {
             paintingForShow = painting
+        }
+    }
+    
+    func saveToContext(context: NSManagedObjectContext, gallery: [Painting]) {
+        do {
+            try context.save()
+        } catch {
+            print("Error saving context \(error)")
         }
     }
 }
