@@ -11,6 +11,10 @@ class PaintingViewModel {
     
     //MARK: - Properties
     
+    let defaults = UserDefaults.standard
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Paintings.plist")
+    let decoder = PropertyListDecoder()
+    
     let imageURLStr = Box(" ")
     let paintingTitle = Box("loading...")
     let artistTitle = Box(" ")
@@ -36,6 +40,7 @@ class PaintingViewModel {
     func fetchPaintings() {
         PaintingService.shared.fetchPaintings { gallery in
             self.paintings = gallery
+            self.saveToDefaults(gallery: gallery)
         }
     }
     
@@ -46,4 +51,16 @@ class PaintingViewModel {
             paintingForShow = painting
         }
     }
+    
+    func saveToDefaults(gallery: [Painting]) {
+        let encoder = PropertyListEncoder()
+        do {
+            let data = try encoder.encode(gallery)
+            try data.write(to: self.dataFilePath!)
+        } catch {
+            print("error saving to plist :  \(error)")
+        }
+    }
+    
+    // add load from defaults
 }

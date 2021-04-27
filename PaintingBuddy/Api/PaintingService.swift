@@ -32,7 +32,6 @@ struct PaintingService {
         .resume()
     }
     
-    
     func parseJSON(data: Data) -> Result<[Painting], Error> {
         let decoder = JSONDecoder()
         do {
