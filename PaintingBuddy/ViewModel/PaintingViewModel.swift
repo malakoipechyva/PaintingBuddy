@@ -62,5 +62,14 @@ class PaintingViewModel {
         }
     }
     
-    // add load from defaults
+    func loadFromDefaults() {
+        if let data = try? Data(contentsOf: dataFilePath!) {
+            let decoder = PropertyListDecoder()
+            do {
+                paintings = try decoder.decode([Painting].self, from: data)
+            } catch {
+                print("error loading data : \(error)")
+            }
+        }
+    }
 }
