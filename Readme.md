@@ -14,4 +14,8 @@ Technologies:
 - [ ] Add horizontal orientation handle
 
 ## Screenshots and Gifs
+<img src="https://user-images.githubusercontent.com/52073275/116567075-f8e08780-a90f-11eb-8e03-8762d85afc11.gif" width="310" height="670">
 
+
+### Inspiration Reference
+[Artmeteo](http://www.artmeteo.ru/)
