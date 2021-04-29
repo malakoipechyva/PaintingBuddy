@@ -15,17 +15,21 @@ struct PaintingService {
     
     private init() {    }
     
-    func fetchPaintings(completion: @escaping ([Painting]) -> Void) {
+    func fetchPaintings(completion: @escaping ([Painting]?) -> Void) {
         guard let url = url else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
-            DispatchQueue.main.async {
-                guard let data = data else { return }
-                let result = parseJSON(data: data)
-                switch result {
-                case let .success(paintings):
-                    completion(paintings)
-                case let .failure(error):
-                    print(error.localizedDescription)
+            if error != nil {
+                completion(nil)
+            } else {
+                DispatchQueue.main.async {
+                    guard let data = data else { return }
+                    let result = parseJSON(data: data)
+                    switch result {
+                    case let .success(paintings):
+                        completion(paintings)
+                    case let .failure(error):
+                        print(error.localizedDescription)
+                    }
                 }
             }
         }

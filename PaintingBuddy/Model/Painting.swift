@@ -11,12 +11,12 @@ struct Painting: Codable {
     
     let title: String
     let artistName: String
-    let dateOfPainting: Int?
+    let dateOfPainting: String?
     let imageUrl: String
     
     enum CodingKeys: String, CodingKey {
         case title, artistName
-        case dateOfPainting = "completitionYear"
+        case dateOfPainting = "yearAsString"
         case imageUrl = "image"
     }
     

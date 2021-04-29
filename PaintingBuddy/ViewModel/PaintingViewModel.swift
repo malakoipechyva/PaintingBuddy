@@ -18,20 +18,20 @@ class PaintingViewModel {
     let imageURLStr = Box(" ")
     let paintingTitle = Box("loading...")
     let artistTitle = Box(" ")
-    let dateOfPainting = Box(0)
-
+    let dateOfPainting = Box(" ")
+    
     private var paintings = [Painting]() {
         didSet {
             takeRandomPaintingForShow()
         }
     }
     
-    private var paintingForShow = Painting(title: "", artistName: "", dateOfPainting: 0, imageUrl: "") {
+    private var paintingForShow = Painting(title: "", artistName: "", dateOfPainting: "", imageUrl: "") {
         didSet {
             paintingTitle.value = paintingForShow.title
             artistTitle.value = paintingForShow.artistName
             imageURLStr.value = paintingForShow.imageUrl
-            dateOfPainting.value = paintingForShow.dateOfPainting ?? 0
+            dateOfPainting.value = paintingForShow.dateOfPainting ?? ""
         }
     }
     
@@ -39,8 +39,15 @@ class PaintingViewModel {
     
     func fetchPaintings() {
         PaintingService.shared.fetchPaintings { gallery in
-            self.paintings = gallery
-            self.saveToDefaults(gallery: gallery)
+            if gallery != nil {
+                guard let safeGallery = gallery else { return }
+                self.paintings = safeGallery
+                self.saveToDefaults(gallery: safeGallery)
+            } else {
+                DispatchQueue.main.async {
+                    self.loadFromDefaults()
+                }
+            }
         }
     }
     
