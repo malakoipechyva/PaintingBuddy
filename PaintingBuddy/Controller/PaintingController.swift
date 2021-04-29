@@ -21,6 +21,7 @@ class PaintingController: UIViewController {
     private let actionButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .red
+        button.layer.cornerRadius = 4
         button.addTarget(self, action: #selector(handleActionButtonTap), for: .touchUpInside)
         return button
     }()
